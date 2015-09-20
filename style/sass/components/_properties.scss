@@ -1,0 +1,47 @@
+// 1. Needed for the parent part of equal guttering
+.properties {
+	display: flex;
+	justify-content: space-between;
+	margin-left: -1 * map-get($grid-gutter, s); // [1]
+
+	@include mq($until: m) { flex-wrap: wrap; }
+
+	@include mq($from: m) { margin-left: -1 * map-get($grid-gutter, m); }
+	@include mq($from: l) { margin-left: -1 * map-get($grid-gutter, l); }
+}
+
+// 1. Needed for the child part of equal guttering
+.properties__container {
+	min-width: 24rem;
+	max-width: 60rem;
+	margin-bottom: 4rem;
+	padding-left: map-get($grid-gutter, s); // [1]
+
+	@include mq($from: m) { padding-left: map-get($grid-gutter, m); }
+	@include mq($from: l) { padding-left: map-get($grid-gutter, l); }
+
+	&.properties__container--sidebar {
+		flex-grow: 1;
+		max-width: 32rem;
+		margin-bottom: 0;
+	}
+}
+
+.properties__list,
+.properties__saved {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.properties__no-saved {
+	padding: 3rem 2rem;
+	text-align: center;
+	background-color: mix(white, $color__alto, 50%);
+	opacity: 1;
+	transition: opacity ease-out 600ms;
+
+	.properties__saved--added & {
+		opacity: 0;
+	}
+}

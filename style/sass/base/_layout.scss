@@ -1,0 +1,12 @@
+.header {
+	padding-bottom: 3rem;
+}
+
+.container {
+	max-width: $max-site-width;
+	margin: 0 auto;
+	padding: map-get($container-gutter, s);
+
+	@include mq($from: m) { padding: map-get($container-gutter, m); }
+	@include mq($from: l) { padding: map-get($container-gutter, m) map-get($container-gutter, l); }
+}

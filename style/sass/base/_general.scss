@@ -1,0 +1,46 @@
+// 1. Set 1rem to be equal to 10px - makes rems sane again
+html {
+	box-sizing: border-box;
+	text-size-adjust: 100%;
+	font-size: 62.5%; // [1]
+}
+
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+// 1. Stops OS X being too heavy with AA (this is debatable, of course!)
+body {
+	 -webkit-font-smoothing: antialiased; // [1]
+	-moz-osx-font-smoothing: grayscale; // [1]
+
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	background-color: white;
+	color: black;
+}
+
+// 1. Fix vertical space being added below images
+// 2. Allow images to up to their native resolution
+img {
+	vertical-align: top; // [1]
+	max-width: 100%; // [2]
+	width:  auto; // [2]
+	height: auto; // [2]
+}
+
+a {
+	color: $color__monza;
+}
+
+.jump-link {
+	display: inline-block;
+	margin-top: 1rem;
+
+	// Only show on smaller devices
+	@include mq($from: m) {
+		display: none;
+	}
+}

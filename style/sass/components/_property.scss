@@ -1,0 +1,110 @@
+.property {
+	position: relative;
+	border-bottom: 0.5rem solid $color__alto;
+	margin-bottom: 2rem;
+	text-decoration: none;
+	color: $color__mine-shaft;
+	opacity: 1;
+	transition: opacity ease-out 300ms;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&:hover {
+		.property__action {
+			z-index: 2;
+			opacity: 1;
+			transition: z-index 1ms, opacity ease-out 300ms;
+		}
+
+		.property__action-inner {
+			transform: scale(1, 1);
+		}
+	}
+
+	&.property--added {
+		opacity: 0;
+	}
+}
+
+.property__item {
+	display: block;
+	text-decoration: none;
+
+	&:visited {
+		text-decoration: none;
+	}
+}
+
+.property__agent {
+	position: relative;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0.5rem 1rem;
+}
+
+.property__details {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 4rem;
+}
+
+.property__actions {
+	display: flex;
+	padding-left: 1rem;
+
+	.property__action-icon {
+		width:  1.6rem;
+		height: 1.6rem;
+	}
+}
+
+.property__price {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0.5rem 1rem;
+	color: $color__mine-shaft;
+	font-size: 1.5rem;
+	text-align: right;
+}
+
+// 1. There are other ways around this, as it's pretty cutting edge...
+//    but for now it lets clicks through :)
+// 2. To avoid using JS and display: none; we transition the z-index
+//    to display behind the block
+.property__action {
+	display: flex;
+	position: absolute;
+	top:    4rem;
+	bottom: 4rem;
+	left:   0;
+	right:  0;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255,255,255, 0.3);
+	opacity: 0;
+	z-index: -1; // [2]
+	pointer-events: none; // [1]
+	transition: z-index 1000ms, opacity ease-out 300ms;
+	color: black;
+	font-weight: 300;
+}
+
+// 1. This is a bleeding-edge property which only works with Safari 9 for now...
+.property__action-inner {
+	display: block;
+	padding: 1rem 2rem;
+	background-color: rgba(255,255,255, 0.85);
+	text-align: center;
+	border-radius: 0.5rem;
+	transform: scale(0.9, 0.9);
+	transition: transform ease-out 200ms;
+	backdrop-filter: blur(1rem) saturate(100%); // [1]
+}
+
+.property__action-icon {
+	width: 2.4rem;
+}

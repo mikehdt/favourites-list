@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Property Listings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Prefetch the DNS for CloudFlare for that bit of extra time saving -->
+<!-- Prefer using https for these links over http where available -->
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,700" rel="stylesheet" type="text/css">
+<link href="./style/css/main.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/vnd.microsoft.icon" href="./favicon.ico">
+
+</head>
+
+<body>
+
+<!-- App (note: <main> is a still sorta new and makes some browsers sad) -->
+<main class="container">
+	<header class="header">
+		<h1>Property Listings</h1>
+		<a href="#saved" class="jump-link">Show saved properties</a>
+	</header>
+
+	<div class="properties">
+		<div class="properties__container">
+			<h2>Results</h2>
+			<ul class="properties__list"></ul>
+		</div>
+
+		<aside id="saved" class="properties__container  properties__container--sidebar">
+			<h2>Saved Properties</h2>
+			<ul class="properties__saved"></ul>
+		</aside>
+	</div>
+
+	<p>The source code contains comments and notes which may be of interest&hellip;</p>
+</main>
+
+
+
+<!-- Templates -->
+<script id="tpl__property" type="text/template">
+	<a href="" class="property__item">
+		<!-- Title -->
+		<h3 class="property__agent" style="background-color: <%= agency.brandingColors.primary %>"><img src="<%= agency.logo %>" alt=""></h3>
+
+		<!-- Hero image -->
+		<% if (mainImage) { %>
+			<img src="<%= mainImage %>" alt="Property <%= id %>">
+		<% } else { %>
+			<img src="./img/no-photo.png" alt="Property <%= id %>">
+		<% } %>
+
+		<!-- Details bar -->
+		<div class="property__details">
+			<span class="property__actions">
+				<% if (list === 'saved') { %>
+					<img src="./img/property-remove.png" class="property__action-icon  property__action-icon--mini">
+				<% } else if (list === 'results') { %>
+					<img src="./img/property-add.png" class="property__action-icon  property__action-icon--mini">
+				<% } %>
+			</span>
+
+			<% if (price) { %>
+				<span class="property__price">Price: <strong><%= price %></strong></span>
+			<% } else { %>
+				<span class="property__price">Contact for pricing</span>
+			<% } %>
+		</div>
+
+		<!-- Modal action -->
+		<span class="property__action">
+			<span class="property__action-inner">
+				<% if (list === 'saved') { %>
+					<img src="./img/property-remove.png" class="property__action-icon"><br>
+					Remove saved property
+				<% } else if (list === 'results') { %>
+				<img src="./img/property-add.png" class="property__action-icon"><br>
+					<% if (saved) { %>Property saved<% } else { %>Save property<% } %>
+				<% } %>
+			</span>
+		</span>
+	</a>
+</script>
+
+<script id="tpl__no-saved" type="text/template">
+	<div class="properties__no-saved">
+		<h3>There are no saved&nbsp;properties</h3>
+		<p>Why not save some properties from the&nbsp;results?</p>
+		<p><img src="./img/property-add.png" class="property__action-icon"></p>
+	</div>
+</script>
+
+
+
+<!-- Scripts -->
+<!-- Local -->
+<!--<script src="./js/vendor/jquery-2.1.4.min.js"></script>
+<script src="./js/vendor/lodash.min.js"></script>
+<script src="./js/vendor/backbone-min.js"></script>
+<script src="./js/vendor/fastclick.min.js"></script>-->
+<!-- CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+<!-- App JS -->
+<script src="./js/dist/app.min.js"></script>
+
+</body>
+</html>
