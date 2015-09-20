@@ -1,17 +1,20 @@
 .property {
 	position: relative;
-	border-bottom: 0.5rem solid $color__alto;
+	border-bottom: 0.1rem solid $color__alto;
 	margin-bottom: 2rem;
 	text-decoration: none;
 	color: $color__mine-shaft;
 	opacity: 1;
-	transition: opacity ease-out 300ms;
+	transition: opacity ease-out 300ms, box-shadow ease-out 300ms;
+	box-shadow: 0 0.2rem 0.3rem rgba(0,0,0, 0.1);
 
 	&:last-child {
 		margin-bottom: 0;
 	}
 
 	&:hover {
+		box-shadow: 0 0.4rem 0.9rem rgba(0,0,0, 0.3);
+
 		.property__action {
 			z-index: 2;
 			opacity: 1;
@@ -49,12 +52,26 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 4rem;
+	height: 6rem;
+	padding-top:    1rem;
+	padding-bottom: 1rem;
+	border-left:  0.1rem solid $color__alto;
+	border-right: 0.1rem solid $color__alto;
+
+	@include mq($from: m) {
+		height: 7rem;
+		padding-top:    1.5rem;
+		padding-bottom: 1.5rem;
+	}
 }
 
 .property__actions {
 	display: flex;
-	padding-left: 1rem;
+	padding-left: 2rem;
+
+	@include mq($from: m) {
+		padding-left: 3rem;
+	}
 
 	.property__action-icon {
 		width:  1.6rem;
@@ -66,7 +83,7 @@
 	display: block;
 	position: relative;
 	margin: 0;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 2rem;
 	color: $color__mine-shaft;
 	font-size: 1.5rem;
 	text-align: right;
@@ -80,7 +97,7 @@
 	display: flex;
 	position: absolute;
 	top:    4rem;
-	bottom: 4rem;
+	bottom: 6rem;
 	left:   0;
 	right:  0;
 	align-items: center;
@@ -92,6 +109,10 @@
 	transition: z-index 1000ms, opacity ease-out 300ms;
 	color: black;
 	font-weight: 300;
+
+	@include mq($from: m) {
+		bottom: 7rem;
+	}
 }
 
 // 1. This is a bleeding-edge property which only works with Safari 9 for now...
