@@ -60,7 +60,11 @@
 				<% if (list === 'saved') { %>
 					<img src="./img/property-remove.png" class="property__action-icon  property__action-icon--mini">
 				<% } else if (list === 'results') { %>
-					<img src="./img/property-add.png" class="property__action-icon  property__action-icon--mini">
+					<% if (saved) { %>
+						<img src="./img/property-added.png" class="property__action-icon  property__action-icon--mini">
+					<% } else { %>
+						<img src="./img/property-add.png" class="property__action-icon  property__action-icon--mini">
+					<% } %>
 				<% } %>
 			</span>
 
@@ -78,8 +82,13 @@
 					<img src="./img/property-remove.png" class="property__action-icon"><br>
 					Remove saved property
 				<% } else if (list === 'results') { %>
-				<img src="./img/property-add.png" class="property__action-icon"><br>
-					<% if (saved) { %>Property saved<% } else { %>Save property<% } %>
+					<% if (saved) { %>
+						<img src="./img/property-added.png" class="property__action-icon"><br>
+						Property saved
+					<% } else { %>
+						<img src="./img/property-add.png" class="property__action-icon"><br>
+						Save property
+					<% } %>
 				<% } %>
 			</span>
 		</span>
