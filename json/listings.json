@@ -5,7 +5,7 @@
             "brandingColors": {
                 "primary": "#ffe51"
             },
-            "logo": "img/static/20120927204448.gif"
+            "logo": "img/static/20120927204448.png"
         },
         "id": "1",
         "mainImage": "img/static/20bfc8668a30e8cabf045a1cd54814a9042fc715a8be683ba196898333d68cec-main.jpg"
@@ -25,7 +25,7 @@
             "brandingColors": {
                 "primary": "#57B5E0"
             },
-            "logo": "img/static/20150807093203.gif"
+            "logo": "img/static/20150807093203.png"
         },
         "id": "3",
         "mainImage": "img/static/98cee1b2a3a64329921fc38f7e2926a78d41fcc683fc48fb8a8ef2999b14c027-main.jpg"
@@ -37,9 +37,9 @@
             "brandingColors": {
                 "primary": "#000000"
             },
-            "logo": "img/static/20140701084436.gif"
+            "logo": "img/static/20140701084436.png"
         },
         "id": "4",
-        "mainImage": "img/static/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg"
+        "mainImage": "img/static/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2-main.jpg"
     }]
 }
