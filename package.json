@@ -1,20 +1,30 @@
 {
-  "name": "frontend-stub",
+  "name": "house-list",
   "version": "1.0.0",
-  "description": "Front end stub. Edit project.json for project settings and for great justice.",
-  "author": "mike@dthought.net",
+  "description": "House list!",
   "private": true,
-
+  "dependencies": {},
   "devDependencies": {
-    "gulp"           : "^3.9.0",
-    "gulp-sourcemaps": "latest",
-
-    "gulp-ruby-sass"   : "latest",
-    "gulp-autoprefixer": "latest",
-    "gulp-minify-css"  : "latest",
-
-    "gulp-concat": "latest",
-    "gulp-rename": "latest",
-    "gulp-uglify": "latest"
-  }
+    "body-parser": "^1.15.0",
+    "chimp": "^0.30.0",
+    "concurrently": "^2.0.0",
+    "express": "^4.13.4"
+  },
+  "scripts": {
+    "test:spec": "concurrently --kill-others \"node ./api/server.js\" \"chimp --mocha --chai --path=./test/spec --browser=phantomjs\"",
+    "test:spec:watch": "concurrently \"node ./api/server.js\" \"chimp --watch --mocha --chai --path=./test/spec --browser=phantomjs\"",
+    "test:features": "concurrently --kill-others \"node ./api/server.js\" \"chimp --path=./test/features --browser=phantomjs\"",
+    "test:features:watch": "concurrently \"node ./api/server.js\" \"chimp --watch --path=./test/features --browser=phantomjs\"",
+    "api": "node ./api/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikehdt/house-list.git"
+  },
+  "author": "Mike Hopkins <mike@dthought.net>",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/mikehdt/house-list/issues"
+  },
+  "homepage": "https://github.com/mikehdt/house-list#readme"
 }
