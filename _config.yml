@@ -1,0 +1,21 @@
+# Site settings
+title: Favourites List
+email: mike@dthought.net
+description: >
+  My learning experience building a test- and API-backed site
+baseurl: "/favourites-list"
+url: "http://mikehdt.github.io"
+fixedNav: 'true' # true or false
+theme: blue # green, blue, orange, purple, grey
+twitterUsername: mikehdt
+githubUsername: mikehdt
+dribbbleUsername: mikehdt
+codepenUsername: mikehdt
+
+# Build settings
+permalink: /:year/:month/:title
+markdown: kramdown
+include: [_pages]
+exclude: [_site, CHANGELOG.md, LICENSE, README.md]
+sass:
+  style: compressed
