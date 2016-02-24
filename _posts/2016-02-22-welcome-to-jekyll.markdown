@@ -1,13 +1,17 @@
 ---
 layout: post
-title:  "Project goals"
+title:  "Day 0 - Goals and technology"
 date:   2016-02-22 19:40:45 +1100
 categories: start
 ---
 
-# Day 0 - The beginning
+# Day 0 - Goals and technology
+
+## Goals
 
 There is a lot of stuff to learn when it comes to modern JavaScript stacks. Here I am going to document my experiences in pulling together a NodeJS-based stack for serving a small single page app, integrating it with a TDD/BDD setup, writing an API to serve JSON data, writing the UI in possibly Backbone or React and having it all interface together. Also, it should leverage newer JS constructs such as those from ES2015. To top it off, I want to also consider dependency graph management, _possibly_ using WebPack, if that's justified... we'll see.
+
+The app itself will be a favourites list. A series of items will be available, you can favourite an item to add it to a separate favourites list, and you can remove any favourited items. This project started life as a simpler version, written in Backbone, but I wanted to break it down, start over, and work back up with a more full-featured technology stack. Hence, this start.
 
 So I'm going to make mistakes. I'm going to break things. I'm going to write about it as I go along. I'm going to misunderstand / misuse things. But hopefully, at the end, I'll have something that's helped teach me (and maybe you?) a lot.
 
