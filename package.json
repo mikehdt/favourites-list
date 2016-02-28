@@ -1,7 +1,7 @@
 {
-  "name": "house-list",
+  "name": "favourites-list",
   "version": "1.0.0",
-  "description": "House list!",
+  "description": "Favourites list!",
   "private": true,
   "dependencies": {},
   "devDependencies": {
@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mikehdt/house-list.git"
+    "url": "git+https://github.com/mikehdt/favourites-list.git"
   },
   "author": "Mike Hopkins <mike@dthought.net>",
   "license": "Apache",
   "bugs": {
-    "url": "https://github.com/mikehdt/house-list/issues"
+    "url": "https://github.com/mikehdt/favourites-list/issues"
   },
-  "homepage": "https://github.com/mikehdt/house-list#readme"
+  "homepage": "https://github.com/mikehdt/favourites-list#readme"
 }
