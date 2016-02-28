@@ -1,0 +1,5 @@
+--compilers js:babel-register
+--require mocha-clean
+--recursive
+--reporter nyan
+--ui bdd
