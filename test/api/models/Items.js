@@ -2,23 +2,38 @@
  * Item unit testing
  */
 
+'use strict';
+
 import chai from 'chai';
-import ItemModel from '../../../api/models/Item';
+import { ItemModel } from '../../../api/models/Item';
 
 let expect = chai.expect;
 
 describe('A new Item model', () => {
     let item;
 
-    before((done) => {
-        item = new ItemModel({
-            name: 'Crazy'
-        });
-
-        done();
+    before(() => {
+        item = new ItemModel({ name: 'Crazy' });
     });
 
-    it('should have a name', () => {
-        expect(item).to.have.property('name', 'Crazy');
+    describe('#id', () => {
+        it('should have an id', () => {
+            expect(item.id).to.not.be.null;
+        });
+    });
+
+    describe('#name', () => {
+        it('should have a name', () => {
+            expect(item.name).to.equal('Crazy');
+        });
+
+        it('should be able to change its name', () => {
+            item.changeName('Chicken');
+            expect(item.name).to.equal('Chicken');
+        });
+
+        it('should not be able to set as null', () => {
+            expect(() => { item.changeName(null); }).to.throw(Error);
+        });
     });
 });

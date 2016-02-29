@@ -1,5 +1,8 @@
-let Item = require('../models/Item'),
-    ItemHandler = function(){
+import { ItemModel, ItemsModel } from '../models/Item';
+
+ItemsModel.addFakeData();
+
+let ItemHandler = function () {
         this.getItems   = getItems;
         this.getItem    = getItem;
         this.createItem = createItem;
@@ -8,17 +11,17 @@ let Item = require('../models/Item'),
     };
 
 function getItems (req, res) {
-    Item.find(function(err, Item){
+    ItemsModel.find(function(err, items){
         if (err) {
             res.send(err);
         }
 
-        res.json(Item);
+        res.json(items);
     });
 }
 
 function getItem (req, res) {
-    Item.findById(req.params.item_id, function(err, item){
+    ItemsModel.findById(req.params.item_id, function(err, item){
         if (err) {
             res.send(err);
         }
@@ -28,12 +31,12 @@ function getItem (req, res) {
 }
 
 function createItem (req, res) {
-    var item = new Item();
+    var item = new ItemModel({
+        name: req.body.name
+    });
 
-    item.name = req.body.name;  // set the things name (comes from the request)
-
-    // save the thing and check for errors
-    item.save(function(err){
+    // save the item and check for errors
+    ItemsModel.save(item, function(err){
         if (err) {
             res.send(err);
         }
@@ -44,26 +47,34 @@ function createItem (req, res) {
 
 function updateItem (req, res) {
     // Not properly working yet...
-    Item.findById(req.params.thing_id, function(err, thing){
+    ItemsModel.findById(req.params.item_id, function(err, item){
         if (err) {
             res.send(err);
         }
 
-        thing.name = req.body.name;
+        item.name = req.body.name;
 
-        // save the thing
-        thing.save(function(err) {
-            if (err) {
-                res.send(err);
-            }
+        // Update the item
+        // item.save(function(err) {
+        //     if (err) {
+        //         res.send(err);
+        //     }
 
-            res.json({ message: 'Thing updated!' });
-        });
+        //     res.json({ message: 'Item updated!' });
+        // });
     })
 }
 
 function deleteItem (req, res) {
+    ItemsModel.remove({
+        id: req.params.item_id
+    }, function(err, item) {
+        if (err) {
+            res.send(err);
+        }
 
+        res.json({ message: 'Successfully deleted' });
+    });
 }
 
 module.exports = ItemHandler;

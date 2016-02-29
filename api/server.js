@@ -2,22 +2,21 @@
 
 // Base setup
 // Call the packages we need
-let express    = require('express'),
-    bodyParser = require('body-parser'),
+import express from 'express';
+import bodyParser from 'body-parser';
 
-    APIHandler  = require('./handlers/APIHandler'),
-    ItemHandler = require('./handlers/ItemHandler'),
-    routes      = require('./Routes'),
-
-    app      = express(),
-    router   = express.Router(),
-    handlers = {
-        api: new APIHandler(),
-        items: new ItemHandler()
-    };
+import APIHandler from './handlers/APIHandler';
+import ItemHandler from './handlers/ItemHandler';
+import routes from './Routes';
 
 function start () {
-    let port = process.env.PORT || 8080;
+    let app      = express(),
+        router   = express.Router(),
+        port = process.env.PORT || 8080,
+        handlers = {
+            api  : new APIHandler(),
+            items: new ItemHandler()
+        };
 
     // REGISTER OUR ROUTES
     // All of our routes will be prefixed with /api
