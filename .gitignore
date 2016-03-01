@@ -9,3 +9,4 @@ node_modules
 
 # Front End Misc
 *.map
+public/dist

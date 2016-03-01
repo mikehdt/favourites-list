@@ -122,6 +122,4 @@ class ItemsModel {
     }
 }
 
-// NodeJS export
-module.exports.ItemModel = ItemModel;
-module.exports.ItemsModel = ItemsModel;
+export { ItemModel, ItemsModel };

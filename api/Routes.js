@@ -1,3 +1,5 @@
+'use strict';
+
 function setupRoutes (router, handlers) {
     router.get('/', handlers.api.defaultRoute);
 
@@ -8,4 +10,4 @@ function setupRoutes (router, handlers) {
     router.delete('/items/:item_id', handlers.items.deleteItem);
 }
 
-exports.setupRoutes = setupRoutes;
+export { setupRoutes };

@@ -1,3 +1,5 @@
+'use strict';
+
 let APIHandler = function () {
     this.defaultRoute = handleDefaultRoute;
 };
@@ -9,4 +11,4 @@ function handleDefaultRoute (req, res) {
     });
 }
 
-module.exports = APIHandler;
+export { APIHandler };

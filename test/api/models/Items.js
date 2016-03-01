@@ -27,12 +27,12 @@ describe('A new Item model', () => {
             expect(item.name).to.equal('Crazy');
         });
 
-        it('should be able to change its name', () => {
+        it('should be able to be changed', () => {
             item.changeName('Chicken');
             expect(item.name).to.equal('Chicken');
         });
 
-        it('should not be able to set as null', () => {
+        it('should not be able to be set as null', () => {
             expect(() => { item.changeName(null); }).to.throw(Error);
         });
     });

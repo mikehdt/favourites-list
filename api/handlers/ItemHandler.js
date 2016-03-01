@@ -1,3 +1,5 @@
+'use strict';
+
 import { ItemModel, ItemsModel } from '../models/Item';
 
 ItemsModel.addFakeData();
@@ -77,4 +79,4 @@ function deleteItem (req, res) {
     });
 }
 
-module.exports = ItemHandler;
+export { ItemHandler };

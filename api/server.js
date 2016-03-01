@@ -5,9 +5,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import APIHandler from './handlers/APIHandler';
-import ItemHandler from './handlers/ItemHandler';
-import routes from './Routes';
+import { APIHandler } from './handlers/APIHandler';
+import { ItemHandler } from './handlers/ItemHandler';
+import { setupRoutes } from './Routes';
 
 function start () {
     let app      = express(),
@@ -20,7 +20,7 @@ function start () {
 
     // REGISTER OUR ROUTES
     // All of our routes will be prefixed with /api
-    routes.setupRoutes(router, handlers);
+    setupRoutes(router, handlers);
 
     // Configure app to use bodyParser), letting us get the data from a POST
     app
