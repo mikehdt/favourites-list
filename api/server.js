@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Base setup
 // Call the packages we need

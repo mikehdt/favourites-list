@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 let APIHandler = function () {
     this.defaultRoute = handleDefaultRoute;

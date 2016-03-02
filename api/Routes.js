@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function setupRoutes (router, handlers) {
     router.get('/', handlers.api.defaultRoute);

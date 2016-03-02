@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Need to refactor into an ES2015 class, but let's get this simpler version
 // running first, eh?
